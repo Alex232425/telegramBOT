@@ -14,7 +14,7 @@ client = python_weather.Client(format=python_weather.IMPERIAL, locale="ru-ru")
 async def echo(message: types.Message):
     weather = await client.find(message.text)
 
-    celsius = round(weather.current.temperature - 32) / 1.8
+    celsius = round((weather.current.temperature - 32) / 1.8)
 
 
     resp_msg = weather.location_name + "\n"
